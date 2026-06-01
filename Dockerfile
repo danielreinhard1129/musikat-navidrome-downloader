@@ -21,6 +21,12 @@ COPY backend/ ./backend/
 # Create downloads directory
 RUN mkdir -p /app/downloads/temp
 
+# Create user with UID 1000
+RUN useradd -m -u 1000 musikat && \
+    chown -R musikat:musikat /app
+
+USER musikat
+
 # Expose port
 EXPOSE 8000
 
