@@ -454,7 +454,11 @@ async def add_root_path(request: Request, call_next):
 
 @app.get("/manifest.json")
 async def manifest():
-    return FileResponse("static/manifest.json", media_type="application/manifest+json")
+    return FileResponse(
+        "static/manifest.json",
+        media_type="application/manifest+json",
+        headers={"Cache-Control": "no-store, no-cache, must-revalidate"},
+    )
 
 
 @app.get("/", response_class=HTMLResponse)
