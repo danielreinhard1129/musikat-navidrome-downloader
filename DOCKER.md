@@ -54,7 +54,7 @@ NAVIDROME_PASSWORD=your_password
 
 # Download Configuration
 OUTPUT_FORMAT=mp3
-AUDIO_QUALITY=128
+AUDIO_QUALITY=320
 
 # YouTube Configuration (optional)
 # Path to YouTube cookies file for bypassing bot detection

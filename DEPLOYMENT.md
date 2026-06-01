@@ -75,7 +75,7 @@ NAVIDROME_PASSWORD=your_admin_password  # Your Navidrome admin password
 
 # Download Configuration
 OUTPUT_FORMAT=mp3
-AUDIO_QUALITY=128
+AUDIO_QUALITY=320
 
 # API Configuration
 API_HOST=0.0.0.0  # Listen on all interfaces

@@ -79,7 +79,7 @@ NAVIDROME_SYNC_API_DELAY_SEC = float(os.getenv("NAVIDROME_SYNC_API_DELAY_SEC", "
 # Download Configuration
 DOWNLOAD_DIR = os.getenv("DOWNLOAD_DIR", "./downloads")  # Temporary download location for testing
 OUTPUT_FORMAT = os.getenv("OUTPUT_FORMAT", "mp3")
-AUDIO_QUALITY = os.getenv("AUDIO_QUALITY", "128")  # kbps (lower = smaller files, 128 is good balance)
+AUDIO_QUALITY = os.getenv("AUDIO_QUALITY", "320")  # kbps (lower = smaller files, 320 is maximum quality)
 # Seconds to keep browser temp files after first serve (stray duplicate GETs then get 200 instead of 404)
 TEMP_FILE_CLEANUP_DELAY_SEC = int(os.getenv("TEMP_FILE_CLEANUP_DELAY_SEC", "60"))
 

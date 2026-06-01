@@ -1151,10 +1151,10 @@ async def get_available_formats():
         ],
         "qualities": [
             {"value": "96", "label": "96 kbps", "description": "Low quality, small files"},
-            {"value": "128", "label": "128 kbps", "description": "Standard quality (default)"},
+            {"value": "128", "label": "128 kbps", "description": "Standard quality"},
             {"value": "192", "label": "192 kbps", "description": "Good quality"},
             {"value": "256", "label": "256 kbps", "description": "High quality"},
-            {"value": "320", "label": "320 kbps", "description": "Maximum quality"},
+            {"value": "320", "label": "320 kbps", "description": "Maximum quality (default)"},
             {"value": "lossless", "label": "Lossless", "description": "FLAC only - no quality loss"}
         ],
         "default_format": config.OUTPUT_FORMAT,

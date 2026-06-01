@@ -221,7 +221,7 @@ let searchType = 'tracks';
 let availableFormats = [];
 let availableQualities = [];
 let defaultFormat = 'mp3';
-let defaultQuality = '128';
+let defaultQuality = '320';
 
 // DOM elements for format/quality (will be set when DOM is ready)
 let audioFormatSelect;
@@ -246,7 +246,7 @@ async function loadFormatOptions() {
             availableFormats = data.formats || [];
             availableQualities = data.qualities || [];
             defaultFormat = data.default_format || 'mp3';
-            defaultQuality = data.default_quality || '128';
+            defaultQuality = data.default_quality || '320';
             
             // Populate format dropdown
             audioFormatSelect.innerHTML = availableFormats.map(fmt => 
@@ -265,13 +265,13 @@ async function loadFormatOptions() {
             console.error('Failed to load format options:', response.status, errorText);
             // Fallback to basic options
             audioFormatSelect.innerHTML = '<option value="mp3">MP3</option>';
-            audioQualitySelect.innerHTML = '<option value="128">128 kbps</option>';
+            audioQualitySelect.innerHTML = '<option value="320">320 kbps</option>';
         }
     } catch (err) {
         console.error('Error loading format options:', err);
         // Fallback to basic options
         if (audioFormatSelect) audioFormatSelect.innerHTML = '<option value="mp3">MP3</option>';
-        if (audioQualitySelect) audioQualitySelect.innerHTML = '<option value="128">128 kbps</option>';
+        if (audioQualitySelect) audioQualitySelect.innerHTML = '<option value="320">320 kbps</option>';
     }
 }
 
