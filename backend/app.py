@@ -452,6 +452,11 @@ async def add_root_path(request: Request, call_next):
     return await call_next(request)
 
 
+@app.get("/manifest.json")
+async def manifest():
+    return FileResponse("static/manifest.json", media_type="application/manifest+json")
+
+
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     """Serve the frontend index.html"""

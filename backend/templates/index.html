@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Musikat">
     <meta name="theme-color" content="#1db954">
-    <link rel="manifest" href="{{ url_for('static', path='manifest.json') }}">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
     {# Avoid href="//" when root_path is "/"; keep single app prefix for API URLs #}
     {% set _rp = (request.scope.get('root_path') or '').strip() %}
