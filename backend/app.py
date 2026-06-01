@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from urllib.parse import quote, unquote
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from pydantic import BaseModel
 from typing import List, Optional, Dict
 import os
@@ -449,6 +449,13 @@ def download_and_process(
 async def add_root_path(request: Request, call_next):
     root_path = request.headers.get("X-Forwarded-Prefix", "")
     request.scope["root_path"] = root_path
+    return await call_next(request)
+
+
+@app.middleware("http")
+async def redirect_bare_static(request: Request, call_next):
+    if request.url.path in ("/static", "/static/"):
+        return RedirectResponse(url="/")
     return await call_next(request)
 
 
